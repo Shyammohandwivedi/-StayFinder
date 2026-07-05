@@ -1,4 +1,6 @@
-const BASE_URL = "https://demohotelsapi.pythonanywhere.com/hotels/";
+const BASE_URL = import.meta.env.VITE_BASE_URL;
+
+console.log("BASE_URL", BASE_URL);
 
 // Get a list of hotels. Pass a search term to filter by name/location.
 export async function getHotels(search = "") {
