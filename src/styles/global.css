@@ -1,0 +1,119 @@
+:root {
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --bg: #f4f6fb;
+  --card-bg: #ffffff;
+  --border: #e5e7eb;
+  --shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Header */
+.header {
+  background: var(--card-bg);
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.tagline {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* Loader */
+.loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 60px 0;
+  color: var(--muted);
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid var(--border);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Shared states */
+.error,
+.empty {
+  text-align: center;
+  padding: 60px 16px;
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+
+.error {
+  color: #dc2626;
+}
+
+/* Rating badge */
+.rating {
+  background: #fef3c7;
+  color: #b45309;
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 2px 8px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  .tagline {
+    display: none;
+  }
+}
